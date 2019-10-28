@@ -229,7 +229,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2019/10/25/ES6/" target="_blank">ES6在项目中非常实用几种新语法</a>
+	  <a class="article-title" href="/2019/10/25/ES6/" target="_blank">ES6</a>
   
     </h1>
   
@@ -252,6 +252,35 @@
     
     <blockquote>
 <h3 id="1-数组的扩展运算符"><a href="#1-数组的扩展运算符" class="headerlink" title="1.数组的扩展运算符"></a>1.数组的扩展运算符</h3></blockquote>
+<pre><code></code></pre><blockquote>
+<h3 id="2-Map和WeakMap"><a href="#2-Map和WeakMap" class="headerlink" title="2.Map和WeakMap"></a>2.Map和WeakMap</h3></blockquote>
+<pre><code class="javascript">const weakMap = new WeakMap()
+let weakKey = {}
+weakMap.set( weakKey,&quot;weakValue&quot; )</code></pre>
+<p><img src="/img/consoleWeakMap.png" alt=""></p>
+<blockquote>
+<p>console打印的值</p>
+</blockquote>
+<pre><code class="javascript">const map = new Map()
+let key = {}
+map.set( key,&quot;value&quot; )</code></pre>
+<p><img src="/img/consoleMap.png" alt=""></p>
+<blockquote>
+<p>console打印的值</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>WeakMap结构与Map结构基本类似，唯一的区别是<strong>它只接受对象作为键名(null除外)，不接受其他类型的值作为键名</strong>，而且键名所指向的对象，不计入垃圾回收机制</p>
+</blockquote>
+</blockquote>
+<p>WeakMap的设计目的在于，键名是对象的弱引用（垃圾回收机制不将该引用考虑在内），所以其对应的对象可能会被自动回收。当对象被回收后，WeakMap自动移除对应的键值对。<br>典型应用是，一个对应DOM元素的WeakMap结构，当某个DOM元素被清除，其所对应的WeakMap记录就会自动被移除。基本上，WeakMap的专用场合就是，它的键所对应的对象，可能会在将来消失。WeakMap结构有助于防止内存泄漏。</p>
+<p><strong>WeakMap与Map在API上的区别主要是两个：</strong></p>
+<ul>
+<li>没有遍历操作（即没有key()、values()和entries()方法），也没有size属性；</li>
+<li>无法清空，即不支持clear方法。这与WeakMap的键不被计入引用、被垃圾回收机制忽略有关。</li>
+</ul>
+<p><strong>因此WeakMap只有四个方法可用：</strong><code>get()、set()、has()、delete().</code></p>
+<p><strong>而Map有9个方法可用：</strong><code>get()、set()、has()、delete()、clear()、keys()、values()、entries()、forEach().</code></p>
 
     
 
@@ -384,7 +413,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2019/10/20/2019Ending/" target="_blank">2019快大结局了！</a>
+	  <a class="article-title" href="/2019/10/20/2019Ending/" target="_blank">2019！</a>
   
     </h1>
   
