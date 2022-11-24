@@ -10,11 +10,15 @@
 <style>
     html,
     body {
-        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        /* background-attachment: fixed;
         background-image: url(https://w.wallhaven.cc/full/e7/wallhaven-e7jj6r.jpg);
         background-size: cover;
         height: 100%;
-        font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+        font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif; */
     }
 
     html::-webkit-scrollbar {
@@ -60,13 +64,39 @@
         margin: 0;
     }
 
-    .app-resouse {}
+    .iframe-bg {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    }
+
+    .tool-shared {
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        color: #fff;
+        font-size: 28px;
+        text-shadow: 0 4px 8px rgb(7 17 27 / 40%);
+        text-align: center;
+        letter-spacing: 5px;
+    }
+
+    .app-resouse {
+        /* position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; */
+        /* transform: translateX(25%); */
+        margin-top: 180px;
+    }
 
     .app-resouse .resource-list {
-        margin-top: 20px;
         padding: 20px;
         background: #fff;
-        min-height: 100vh;
+        /* height: 80%; */
     }
 
     .app-resouse .resource-list .resource-item-wrap .resource-item {
@@ -201,6 +231,11 @@
             width: auto;
         }
 
+        .tool-shared {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
         .resource-item-wrap {
             width: 50%;
         }
@@ -209,6 +244,11 @@
     @media screen and (min-width: 576px) {
         .s-container {
             max-width: 640px;
+        }
+
+        .tool-shared {
+            font-size: 18px;
+            letter-spacing: 2px;
         }
 
         .resource-item-wrap {
@@ -221,6 +261,11 @@
             max-width: 767px;
         }
 
+        .tool-shared {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
         .resource-item-wrap {
             width: 33.33333%;
         }
@@ -229,6 +274,11 @@
     @media screen and (min-width: 992px) {
         .s-container {
             max-width: 970px;
+        }
+
+        .tool-shared {
+            font-size: 24px;
+            letter-spacing: 3px;
         }
 
         .resource-item-wrap {
@@ -255,8 +305,8 @@
         border-bottom: 1px solid #ebebeb;
         color: #414240;
         position: sticky;
-        top: 0px;
-        z-index: 999;
+        top: 200px;
+        z-index: 888;
         background: #fff;
     }
 
@@ -302,6 +352,10 @@
 </style>
 
 <body>
+    <iframe id="fishWin" class="iframe-bg" src="https://wangrongding.github.io/jellyfish/" height="200px"
+        frameborder="0" scrolling="no" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-forms"
+        width="100%"></iframe>
+    <h1 class="tool-shared">前端资源库、收集一些前端开发的资源</h1>
     <div class="app-resouse">
         <div class="s-container resource-list" id="warpper"></div>
     </div>
@@ -323,12 +377,12 @@
                         "title": "EZGIF",
                         "desc": "在线转各类格式文件、转gif、压缩文件、格式转换、ppt神器"
                     },
-                    {
-                        "link": "https://www.liantu.com/",
-                        "img": "https://www.liantu.com/images/2013/logo.gif",
-                        "title": "联图网",
-                        "desc": "在线生成自定义二维码。"
-                    },
+                    // {
+                    //     "link": "https://www.liantu.com/",
+                    //     "img": "https://www.liantu.com/images/2013/logo.gif",
+                    //     "title": "联图网",
+                    //     "desc": "在线生成自定义二维码。"
+                    // },
                     {
                         "link": "https://code.fun/",
                         "img": "https://code.fun/img/logo.svg",
@@ -382,10 +436,22 @@
                 "title": "前端框架",
                 "children": [
                     {
+                        "link": "http://www.quasarchs.com/start/quasar-cli",
+                        "img": "https://cdn.quasar.dev/logo-v2/svg/logo.svg",
+                        "title": "Quasar CLI",
+                        "desc": "无缝构建：SPA（单页应用/ 网站），SSR（服务器端渲染的应用 / 网站），PWA（渐进式网页应用），BEX（浏览器扩展）,移动应用（通过Cordova或Capacitor），Electron应用"
+                    },
+                    {
                         "link": "https://zh-hans.reactjs.org/",
                         "img": "http://mingme.oss-cn-beijing.aliyuncs.com/image/poster/20201020/react.svg?t=1614735633358?t=1632541253147",
                         "title": "React",
                         "desc": "React 官方中文文档 – 用于构建用户界面的 JavaScript 库"
+                    },
+                    {
+                        "link": "https://simulatedgreg.gitbooks.io/electron-vue/content/cn/",
+                        "img": "http://www.electronjs.org/zh/assets/img/favicon.ico",
+                        "title": "electron",
+                        "desc": "桌面端 基于 vue  来构造 electron 应用程序的样板代码。"
                     },
                     {
                         "link": "https://cn.vuejs.org/",
